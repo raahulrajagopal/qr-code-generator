@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#eaf4ec">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Free QR Code Generator – URL, WhatsApp, Wi-Fi, UPI and more</title>
+<meta name="description" content="Create free static QR codes for links, text, WhatsApp, calls, SMS, email, Wi-Fi, contacts, UPI payments and locations. No sign-up, no expiry. Download as PNG or SVG.">
+<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>QR code generator</h1>
+    <p class="sub">Free static QR codes. No sign-up, no expiry, nothing stored on a server.</p>
+    <div id="tabs" class="tabs" role="tablist" aria-label="QR code type"></div>
+  </div>
+</header>
+
+<main class="wrap app">
+  <section class="card editor" aria-label="QR code details">
+    <div id="panels"></div>
+    <details class="options">
+      <summary>Options</summary>
+      <div class="opt-grid">
+        <label>Error correction
+          <select id="ecl">
+            <option value="L">Low (7%)</option>
+            <option value="M" selected>Medium (15%)</option>
+            <option value="Q">Quartile (25%)</option>
+            <option value="H">High (30%)</option>
+          </select>
+        </label>
+        <label>Download size
+          <select id="size">
+            <option value="512">512 px</option>
+            <option value="1024" selected>1024 px</option>
+            <option value="2048">2048 px</option>
+          </select>
+        </label>
+      </div>
+    </details>
+  </section>
+
+  <section class="card result" aria-label="QR code preview">
+    <div id="preview" class="preview" aria-live="polite"></div>
+    <p id="msg" class="msg"></p>
+    <p class="note">Use SVG for print. Test every code with your phone before using it.</p>
+    <div class="actions">
+      <button id="dlPng" class="btn primary" disabled>Download PNG</button>
+      <button id="dlSvg" class="btn soft" disabled>Download SVG</button>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status"></div>
+
+<script src="script/qrcode.js"></script>
+<script src="script/script.js"></script>
+</body>
+</html>
